@@ -32,8 +32,8 @@ def main():
         linear_search_total_time += toc - tic
 
     linear_search_mean_time = linear_search_total_time / args.num_searches
-    print('Linear search: ' \
-          + '{:.5f}'.format(linear_search_mean_time) \
+    print('Linear search: '
+          + '{:.5f}'.format(linear_search_mean_time)
           + ' seconds')
 
     tic = time.perf_counter()
@@ -42,8 +42,8 @@ def main():
 
     bsearch_idx_time = toc - tic
 
-    print('Indexing: ' \
-          + '{:.5f}'.format(bsearch_idx_time) \
+    print('Indexing: '
+          + '{:.5f}'.format(bsearch_idx_time)
           + ' seconds')
 
     bsearch_total_time = 0
@@ -55,10 +55,9 @@ def main():
         bsearch_total_time += toc - tic
 
     bsearch_mean_time = bsearch_total_time / args.num_searches
-    print('Binary search: ' \
-          + '{:.5f}'.format(bsearch_mean_time) \
+    print('Binary search: '
+          + '{:.5f}'.format(bsearch_mean_time)
           + ' seconds')
-
 
 
 if __name__ == '__main__':
