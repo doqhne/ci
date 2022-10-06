@@ -7,6 +7,20 @@ on:
     branches: [main]
 
 jobs:
+  functional_tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: swe4s
+          environment-file: environment.yml
+      - run: |
+          cd test/func
+          bash test_search.sh
   code_style:
     runs-on: ubuntu-latest
     defaults:
@@ -19,7 +33,7 @@ jobs:
           activate-environment: swe4s
           environment-file: environment.yml
       - run: pycodestyle $(git ls-files "*.py")
-      
+
   unit_tests:
     runs-on: ubuntu-latest
     steps:
